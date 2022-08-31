@@ -1,14 +1,26 @@
 import { it, expect, describe } from 'vitest';
 import { add } from './math.js';
 
+// Keep it simple!
+
+// Solo los datos necesarios para que el test funcione correctamente
+// Agrega valor a mi test sumarle x dato?
+
+// QUE testear?
+// Una "cosa" : Una feature o un comportamiento POR test
+
+// Patrón AAA (Arrange, Act, Assert)
+
+
+// Code => Test => Rewrite Code => Rewrite Test =>  ...
+
+// Testear es un proceso iterativo, podemos testear cuantas veces sea necesario para lograr el comportamiento esperado de nuestro código
+// De esta forma, podemos reconocer mejoras en la lógica de nuestras funciones, modificándolas para acercanos cada vez más al comportamiento deseado.
+
+
+
 // 1º arg : descripcion de lo que debería cumplir la funcion a testear
 // 2º arg : fn anon con la lógica del test
-
-// Keep it simple
-// Los datos necesarios para que el test funcione correcctamente
-// agrega valor a mi test sumarle x dato?
-
-
 describe('add', () => {
 
     it('should sumarize all number values in an array', () => {

@@ -32,7 +32,7 @@ describe('transformToNumber()', () => {
     });
 
     // cualquir valor no transformable
-    // [] tranforma a 0  :'v?
+    // [] tranforma a 0 
     it('should yield a NaN if the argument its any symbol of type string', () => {
 
         const value1 = "q";
