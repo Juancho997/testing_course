@@ -1,10 +1,9 @@
 
-# QUE testear?
-- Una "cosa", una "unit" : Una feature o un comportamiento POR test
-- Por lo general, una función
+# Qué testear?
+- Una "cosa", una "unit" : Una feature o un comportamiento POR test.
+- Por lo general, una función.
 - Entra en juego la calidad de su lógica, qué y cuántos comportamientos tiene, si es modularizable, etc.
-
-- Que esa "cosa", sea TUYA : no testear lógica que no has escrito, o llamados a API´s de terceros.
+- Que esa "unit", sea TUYA : no testear lógica que no has escrito, o llamados a API´s de terceros.
 - Se testea lo que se crea y utiliza, no lo que simplemente se utiliza. 
 
 
