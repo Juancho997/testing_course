@@ -1,5 +1,5 @@
 import { it, expect, describe } from 'vitest';
-import { transformToNumber } from './numbers.js';
+import { transformToNumber, cleanNumbers } from './numbers.js';
 
 
 describe('transformToNumber()', () => {
@@ -57,4 +57,35 @@ describe('transformToNumber()', () => {
         expect(result).toBe(0);
     });
 
+});
+
+
+describe('cleanNumbers()', () => {
+
+    // Integration Test => cleanNumbers() llama a transformToNumber() durante su ejecución
+    it('should return an array of number values if an array of string numbers is provided', () => {
+
+        const numberValues = ['1', '2'];
+
+        const cleanedNumbers = cleanNumbers(numberValues);
+
+        //! toBe() != toEqual()
+        // expect(cleanedNumbers).toBe([1, 2]); => AssertionError: expected [ 1, 2 ] to be [ 1, 2 ] // Object.is equality //!no es el mismo objeto en memoria
+        // expect(cleanedNumbers).toEqual([1, 2]); => Pasa el test. Se comparan los valores, no el objeto
+
+        // expect(cleanedNumbers[0]).toBeTypeOf('number');
+    });
+
+
+    it('should throw an error if an array of at least one empty string its provided', () => {
+
+        const values = ['', 1];
+
+        const cleanValues = () => {
+            cleanNumbers(values);
+        };
+
+        expect(cleanValues).toThrow();
+
+    });
 });
