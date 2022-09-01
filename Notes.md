@@ -1,10 +1,9 @@
 
-# QUE testear?
-- Una "cosa", una "unit" : Una feature o un comportamiento POR test
-- Por lo general, una función
+# Qué testear?
+- Una "cosa", una "unit" : Una feature o un comportamiento POR test.
+- Por lo general, una función.
 - Entra en juego la calidad de su lógica, qué y cuántos comportamientos tiene, si es modularizable, etc.
-
-- Que esa "cosa", sea TUYA : no testear lógica que no has escrito, o llamados a API´s de terceros.
+- Que esa "unit", sea TUYA : no testear lógica que no has escrito, o llamados a API´s de terceros.
 - Se testea lo que se crea y utiliza, no lo que simplemente se utiliza. 
 
 
@@ -17,7 +16,7 @@
 - Arrange : enfocarse en la esencia del test (qué busco testear?). Valores base de arranque. Deben coincidir con el objetivo del test.
 - Mantener el número de "expects" bajos (un test, un comportamiento)
 
-
+```
     it('should sumarize all number values in an array', () => {
         => Arrange
         const numbers = [1, 2];
@@ -30,7 +29,7 @@
         expect(result).toBe(expectedResult);
     });
 
-
+```
 # Code => Test => Rewrite Code => Rewrite Test =>  ...
 
 - Testear es un proceso iterativo, podemos testear cuantas veces sea necesario para lograr el comportamiento esperado de nuestro código
@@ -68,7 +67,8 @@
     - Para ello, utilizamos done() luego de expect() para que dé por finalizado el test luego de la resolución asíncrona.
     - Caso contrario, no esperará y siempre dará el test como pasado (falso positivo), ya que nunca esperó a que jwt.sign() termine de ejecutarse.
     - Así también, podemos utilizar try/catch para capturar todos los errores que surjan y poder visualizarlos mejor.  
-    
+    - 
+    ```
     it('should generate a token value', (done) => {
 
         const testUserEmail = 'test@test.com';
@@ -86,12 +86,15 @@
         });
     });
 
-
+    ```
+    
     ### //==> con Promesas
     - 'expect' puede manjear promesas
     - 'resolves' cuando espero que la promesa se cumpla 
     - 'rejects' caso contrario
 
+
+    ```
     it('should generate a token value', () => {
 
         const testUserEmail = 'test@test.com';
@@ -99,10 +102,11 @@
         return expect(generateTokenPromise(testUserEmail)).resolves.toBeDefined();
 
     });
-
+    
+    ```
 
     ### //==>con Async/Await
-    
+    ```
     it('should generate a token value', async () => {
         
         const testUserEmail = 'test@test.com';
@@ -112,3 +116,4 @@
         expect(token).toBeDefined();
 
     });
+    ```
