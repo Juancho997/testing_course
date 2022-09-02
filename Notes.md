@@ -67,7 +67,7 @@
     - Para ello, utilizamos done() luego de expect() para que dé por finalizado el test luego de la resolución asíncrona.
     - Caso contrario, no esperará y siempre dará el test como pasado (falso positivo), ya que nunca esperó a que jwt.sign() termine de ejecutarse.
     - Así también, podemos utilizar try/catch para capturar todos los errores que surjan y poder visualizarlos mejor.  
-    - 
+ 
     ```
     it('should generate a token value', (done) => {
 
