@@ -117,3 +117,19 @@
 
     });
     ```
+
+
+# Mock & Spies
+ - Guiarse con los ejemplos prácticos.
+
+## Mocks
+- Cuando debemos llamar módulos, tanto propios como de 3º's, usamos mocks
+- Evitamos efectos secundarios no deseados durante la ejecución de los test.
+- El mocking solo afecta a los tests, no al código.
+- Los módulos mockeados están disponibles para todos los test. Por ello, Vitest escanea qué test usan el módulo, sin llamar a vi.mock(), y los ejecuta primero para evitar errores.
+- Se puede utilizar el método vi.mockImplementationOnce(() => { }) para utilizar el mock solo en el test donde es llamado.
+- Podemos implementar custom mocks tanto en el mismo archivo del test, como en la carpeta __mocks__ destinada a ese fin. Allí, creamos archivos .js con el nombre del módulo a mockear.
+
+## Spies
+- Funciones vacías que trackean cualquier ejecución que se realice de ella.
+- Se suelen pasar como parámetro cuando la función recibe cb's para su funcionamiento.
