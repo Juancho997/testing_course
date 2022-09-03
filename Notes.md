@@ -119,6 +119,22 @@
     ```
 
 
+# Manejando errores
+- Cuando nuestro test busca que la unit arroje un error (como consecuencia de su propio funcionamiento) debemos envolver dicho código en una función, de otra forma el error no será capturado y la aserción fallará.
+- Podemos utilizar toThrow() o métodos similares para atrapar errores en gral o algún error específico. toThrow() puede recibir un string o una expresión regular para buscar el mensaje de un error en particular.
+
+```
+    it('should throw an error when a blank space string its provided', () => {
+        const emptyString = ' ';
+
+        const validationFn = () => validateNotEmpty(emptyString);
+
+        expect(validationFn).toThrow();
+
+    });
+```
+
+
 # Mock & Spies
  - Guiarse con los ejemplos prácticos.
 
